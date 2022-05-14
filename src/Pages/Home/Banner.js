@@ -22,7 +22,7 @@ const Banner = () => {
                 </div>
 
             </section>
-            <section class="lg:mt-3 flex flex-col lg:flex-row justify-between items-center border-t gap-10 lg:gap-8 pt-8 lg:px-24">
+            <section class="lg:mt-5 flex flex-col lg:flex-row justify-between items-center border-t gap-10 lg:gap-8 pt-8 lg:px-24">
 
                 <div class="grid grid-cols-2 md:flex md:divide-x gap-4 -mx-6 md:-mx-8">
                     <div class="px-6 md:px-8">

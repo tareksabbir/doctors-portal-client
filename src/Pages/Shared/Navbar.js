@@ -1,37 +1,66 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/icons/icons8-microbeam-radiation-therapy-48.png"
-const Navbar = () => {
+const Navbar = ({ children }) => {
     return (
-        <div class="navbar bg-base-100 lg:px-10 py-6 px-2">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/appointment">Appointment</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/review">Reviews</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                    </ul>
+        <>
+            <div class="drawer drawer-end">
+                <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content flex flex-col">
+
+                    <div class="w-full navbar bg-base-100 px-5 lg:px-10 lg:mt-3 mt-2">
+                        <img src={logo} className="h-10 w-10" alt="" />
+                        <div class="flex-1 mx-2 text-xl lg:text-3xl font-bold">Doctors Hub</div>
+                        <div class="flex-none lg:hidden">
+                            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                            </label>
+                        </div>
+
+                        <div class="flex-none hidden lg:block">
+                            <ul class="menu menu-horizontal gap-x-2">
+
+                                <li><NavLink to="/" className=' rounded-lg'>Home</NavLink></li>
+                                <li><NavLink to="/appointment" className=' rounded-lg'>Appointment</NavLink></li>
+                                <li><NavLink to="/about" className=' rounded-lg'>About</NavLink></li>
+                                <li><NavLink to="/review" className=' rounded-lg'>Reviews</NavLink></li>
+                                <li><NavLink to="/contact" className=' rounded-lg'>Contact Us</NavLink></li>
+                                <li><NavLink to="/login" className=' rounded-lg'>Login</NavLink></li>
+
+                                <li class="dropdown dropdown-end dropdown-hover">
+                                    <label tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
+                                    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                        <li><Link to='/'>Item 1</Link></li>
+                                        <li><Link to='/'>Item 2</Link></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    {children}
                 </div>
-                <img src={logo} alt="" className="h-12 w-12"></img>
-                <Link to="/" class=" lg:text-2xl font-bold lg:pl-1"> Doctors Hub</Link>
+
+                <div class="drawer-side">
+                    <label for="my-drawer-3" class="drawer-overlay"></label>
+                    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/appointment">Appointment</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/review">Reviews</NavLink></li>
+                        <li><NavLink to="/contact">Contact Us</NavLink></li>
+                        <li><NavLink to="/login">Login</NavLink></li>
+
+                    </ul>
+
+                </div>
             </div>
-            <div class="hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">
-                    <li className='lg:ml-28'><Link to="/">Home</Link></li>
-                    <li><Link to="/appointment">Appointment</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/review">Reviews</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li ><Link to="/login">Login</Link></li>
-                </ul>
-            </div>
-        </div>
+
+
+        </>
+
 
     );
 };

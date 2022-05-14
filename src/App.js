@@ -10,15 +10,16 @@ import Navbar from "./Pages/Shared/Navbar";
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
-        <Route path="/appointment" element={<Appointment></Appointment>}></Route>
-        <Route path="/contact" element={<Contact></Contact>}></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/review" element={<Reviews></Reviews>}></Route>
-      </Routes>
+      <Navbar>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/about" element={<About></About>}></Route>
+          <Route path="/appointment" element={<Appointment></Appointment>}></Route>
+          <Route path="/contact" element={<Contact></Contact>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/review" element={<Reviews></Reviews>}></Route>
+        </Routes>
+      </Navbar>
     </>
   );
 }
