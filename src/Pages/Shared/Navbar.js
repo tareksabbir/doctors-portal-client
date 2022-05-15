@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/icons/icons8-microbeam-radiation-therapy-48.png"
+
 const Navbar = ({ children }) => {
     return (
         <>
@@ -30,8 +31,8 @@ const Navbar = ({ children }) => {
                                 <li class="dropdown dropdown-end dropdown-hover">
                                     <label tabindex="0" class="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
                                     <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><Link to='/'>Item 1</Link></li>
-                                        <li><Link to='/'>Item 2</Link></li>
+                                        <li><Link to='/service'>Service</Link></li>
+                                        <li><Link to='/make'>Make Appointment</Link></li>
                                     </ul>
                                 </li>
 

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Testimonials = () => {
     return (
-        <div className='lg:mt-28 lg:mb-28'>
-            <div className='lg:px-36 px-10'>
+        <div className='lg:mt-20 lg:mb-28 px-20 lg:px-0'>
+            <div className='lg:px-28 mt-20'>
                 <h4 className='text-xl text-primary font-bold '>Testimonials</h4>
                 <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold  mb-8 md:mb-12">What others say about us</h2>
             </div>

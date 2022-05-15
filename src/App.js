@@ -2,9 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Contact from "./Pages/Contact/Contact";
+import Footer from "./Pages/Footer/Footer";
 import Home from "./Pages/Home/Home";
+import MakeAppointment from "./Pages/Home/MakeAppointment";
+import Service from "./Pages/Home/Service";
 import Login from "./Pages/Login/Login";
 import Reviews from "./Pages/Reviews/Reviews";
+
 import Navbar from "./Pages/Shared/Navbar";
 
 function App() {
@@ -18,8 +22,14 @@ function App() {
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/review" element={<Reviews></Reviews>}></Route>
+          <Route path="/service" element={<Service></Service>}></Route>
+          <Route path="/make" element={<MakeAppointment></MakeAppointment>}></Route>
         </Routes>
       </Navbar>
+      <Footer></Footer>
+
+
+
     </>
   );
 }

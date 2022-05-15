@@ -1,9 +1,9 @@
 import React from 'react';
 import Banner from './Banner';
 import Care from './Care';
+import Feedback from './Feedback';
+import Hospitals from './Hospitals';
 import InfoMain from './InfoMain';
-import MakeAppointment from './MakeAppointment';
-import Service from './Service';
 import Testimonials from './Testimonials';
 
 const Home = () => {
@@ -11,10 +11,11 @@ const Home = () => {
         <>
             <Banner></Banner>
             <InfoMain></InfoMain>
-            <Service></Service>
             <Care></Care>
-            <MakeAppointment></MakeAppointment>
+            <Hospitals></Hospitals>
             <Testimonials></Testimonials>
+            <Feedback></Feedback>
+
 
         </>
     );
