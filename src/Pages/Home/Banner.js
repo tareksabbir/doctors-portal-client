@@ -1,5 +1,5 @@
 import React from 'react';
-import doctor from '../../assets/images/Doctors-rafiki.png'
+import doctor from '../../assets/images/Doctors (1).gif'
 
 const Banner = () => {
     return (
