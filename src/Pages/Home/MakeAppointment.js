@@ -12,7 +12,7 @@ const MakeAppointment = () => {
                 <h3 className='text-xl text-primary font-bold'>Appointment</h3>
                 <h2 className='text-3xl font-bold mt-2'>Make an Appointment Today</h2>
                 <p className='mt-2'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi deleniti excepturi corporis repellendus, asperiores, quo fuga error, perferendis quia totam adipisci atque. Fugit corrupti consequuntur similique dolorum suscipit inventore, culpa molestias fuga reiciendis nesciunt, atque magnam harum consectetur, enim deserunt provident nemo eligendi voluptatum at beatae optio? Facere, est eveniet?</p>
-                <a href="/" class="inline-block bg-primary hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-5">Book now</a>
+                <a href="/" className="inline-block bg-primary hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 mt-5">Book now</a>
 
             </div>
 
