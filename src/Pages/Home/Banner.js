@@ -1,5 +1,6 @@
 import React from 'react';
 import doctor from '../../assets/images/Doctors (1).gif'
+import CountUp from 'react-countup';
 
 const Banner = () => {
     return (
@@ -26,18 +27,18 @@ const Banner = () => {
 
                 <div class="grid grid-cols-2 md:flex md:divide-x gap-4 -mx-6 md:-mx-8">
                     <div class="px-6 md:px-8">
-                        <span class="block text-primary text-lg md:text-xl font-bold text-center md:text-left">20</span>
+                        <span class="block text-primary text-lg md:text-xl font-bold text-center md:text-left"><CountUp end={20} duration={5} /></span>
                         <span class="block text-gray-800 text-sm md:text-base font-semibold text-center md:text-left">Hospitals</span>
                     </div>
 
                     <div class="px-6 md:px-8">
-                        <span class="block text-primary text-lg md:text-xl font-bold text-center md:text-left">250+</span>
+                        <span class="block text-primary text-lg md:text-xl font-bold text-center md:text-left"><CountUp end={50} duration={5} />+</span>
                         <span class="block text-gray-800 text-sm md:text-base font-semibold text-center md:text-left">Doctors</span>
                     </div>
 
                     <div class="px-6 md:px-8">
-                        <span class="block text-primary text-lg md:text-xl font-bold text-center md:text-left">5500+</span>
-                        <span class="block text-gray-800 text-sm md:text-base font-semibold text-center md:text-left">Patient</span>
+                        <span class="block text-primary text-lg md:text-xl font-bold text-center md:text-left"><CountUp end={150} duration={5} />+</span>
+                        <span class="block text-gray-800 text-sm md:text-base font-semibold text-center md:text-left">Stuffs</span>
                     </div>
 
                     <div class="px-6 md:px-8">
