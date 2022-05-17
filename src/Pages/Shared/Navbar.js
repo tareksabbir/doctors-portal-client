@@ -29,8 +29,8 @@ const Navbar = ({ children }) => {
                                 <li><NavLink to="/login" className=' rounded-lg'>Login</NavLink></li>
 
                                 <li className="dropdown dropdown-end dropdown-hover">
-                                    <label tabindex="0" className="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
-                                    <ul tabindex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    <label tabIndex="0" className="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
+                                    <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                                         <li><Link to='/service'>Service</Link></li>
                                         <li><Link to='/make'>Make Appointment</Link></li>
                                     </ul>

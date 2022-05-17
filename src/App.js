@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Contact from "./Pages/Contact/Contact";
-import Footer from "./Pages/Footer/Footer";
+
 import Home from "./Pages/Home/Home";
 import MakeAppointment from "./Pages/Home/MakeAppointment";
 import Service from "./Pages/Home/Service";
@@ -26,7 +26,7 @@ function App() {
           <Route path="/make" element={<MakeAppointment></MakeAppointment>}></Route>
         </Routes>
       </Navbar>
-      <Footer></Footer>
+
 
 
 

@@ -5,6 +5,8 @@ import Feedback from './Feedback';
 import Hospitals from './Hospitals';
 import InfoMain from './InfoMain';
 import Testimonials from './Testimonials';
+import Footer from '../Footer/Footer'
+
 
 const Home = () => {
     return (
@@ -15,6 +17,7 @@ const Home = () => {
             <Hospitals></Hospitals>
             <Testimonials></Testimonials>
             <Feedback></Feedback>
+            <Footer></Footer>
 
 
         </>
