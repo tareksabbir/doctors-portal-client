@@ -1,19 +1,24 @@
 import React from 'react';
 
-const Service = ({ service }) => {
-    const { name, slots } = service;
+const Service = ({ service, setTreatment }) => {
+    const { name, slots, doctor, degree, hospital } = service;
     return (
-        <div class="card lg:max-w-lg bg-base-100 shadow-xl px-20">
+        <div class="card lg:max-w-lg bg-base-100 shadow-xl">
             <div class="card-body">
-                <h2 class="card-title mx-auto mt-6">{name}</h2>
+                <h2 className='card-title text-center mx-auto mt-6'>{doctor}</h2>
+                <p class="text-center font-semibold">{name}</p>
+                <p className='text-center'><small>( {degree} )</small></p>
+                <p className='text-center font-bold'><small> Location: {hospital} </small></p>
+
+
                 <p className='text-center '>
                     {
-                        slots.length > 0 ? <span className='mx-auto text-center'>{slots[0]}</span> : <span className='mx-auto text-center text-primary'>Try next day todays slots are full</span>
+                        slots.length > 0 ? <span className='mx-auto text-center'>{slots[0]}</span> : <span className='mx-auto text-center text-primary'>Try  another day todays slots are full!</span>
                     }
                 </p>
                 <p className='text-center'>{slots.length} {slots.length > 1 ? 'Spaces' : 'Space'} available</p>
-                <div class="card-actions justify-end mt-5">
-                    <button class="btn btn-primary mx-auto">Book Now</button>
+                <div class="card-actions justify-end mt-5 items-center">
+                    <label for="booking-modal" onClick={() => setTreatment(service)} disabled={slots.length === 0} class="btn btn-primary  items-center mx-auto text-white">Book</label>
                 </div>
 
             </div>

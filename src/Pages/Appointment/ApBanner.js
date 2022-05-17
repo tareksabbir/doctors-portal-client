@@ -10,7 +10,7 @@ const ApBanner = ({ date, setDate }) => {
         <section class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16 px-10 lg:px-24 lg:py-10">
 
             <div class="xl:w-5/12 flex flex-col justify-center items-center lg:items-start sm:text-center lg:text-left lg:py-12 xl:py-24">
-                <h1 class="text-black-800 text-4xl sm:text-5xl md:text-5xl font-bold mb-8 md:mb-12 mt-14 lg:mt-0">Pick Your Date For Doctors Appointment</h1>
+                <h1 class="text-black-800 text-3xl sm:text-4xl md:text-4xl font-bold mb-8 md:mb-12 mt-14 lg:mt-0 px-10 lg:px-0">Pick Your Date For Doctors Appointment</h1>
 
                 <div>
                     <DayPicker

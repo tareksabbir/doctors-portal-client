@@ -1,62 +1,272 @@
 [
     {
         "_id": 1,
-        "name": "Teeth Orthodontics",
+        "name": "Hart Specialties",
+        "doctor": "Dr. Afjalur Rahman",
+        "degree": "M.B.B.S,Ph.D. in Cardiology(Scotland),FRCP",
+        "hospital": "Dhaka Medical",
         "slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM"
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
         ]
     },
     {
         "_id": 2,
-        "name": "Cosmetic Dentistry",
+        "name": "Hart Specialties",
+        "doctor": "Dr. Lutfor Rahman",
+        "degree": "M.B.B.S,Ph.D. in Cardiology(USA),FRCP",
+        "hospital": "Chittagong Medical",
         "slots": [
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM"
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
         ]
     },
     {
         "_id": 3,
-        "name": "Teeth Cleaning",
+        "name": "Hart Specialties",
+        "doctor": "Dr. Nurun Nahar Fatema",
+        "degree": "M.B.B.S,Ph.D. in Cardiology(Canada),FRCP",
+        "hospital": "Square Hospital",
         "slots": [
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM"
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
         ]
     },
     {
         "_id": 4,
-        "name": "Cavity Protection",
+        "name": "Hart Specialties",
+        "doctor": "Dr. Tanjima Parvin",
+        "degree": "M.B.B.S,Ph.D. in Cardiology(Canada),FCCS",
+        "hospital": "PG Hospital",
         "slots": [
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM"
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
         ]
     },
     {
         "_id": 5,
-        "name": "Pediatric Dental",
+        "name": "Hart Specialties",
+        "doctor": "Dr. Ashraful Haque Siam",
+        "degree": "M.B.B.S,Ph.D. in Cardiology(Germany),FCCS",
+        "hospital": "Labaid Hospital",
         "slots": [
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 9.30 AM",
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM"
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
         ]
     },
     {
         "_id": 6,
-        "name": "Oral Surgery",
+        "name": "Hart Specialties",
+        "doctor": "Dr. Momenuzzaman",
+        "degree": "M.B.B.S,Ph.D. in Cardiology(DMC),FCCS",
+        "hospital": "Popular Hospital",
         "slots": [
-            "09.30 AM - 10.00 AM",
-            "10.00 AM - 10.30 AM",
-            "10.30 AM - 11.00 AM"
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 7,
+        "name": "Neurology Specialties",
+        "doctor": "Professor Dr. Kazi Deen",
+        "degree": "M.B.B.S,Ph.D. in Neurology(DMC),FCPS",
+        "hospital": "APRC & General Hospital",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 8,
+        "name": "Neurology Specialties",
+        "doctor": "Prof. Dr. Md. Amirul Haque",
+        "degree": "MBBS (DMC), FCPS, FRCP, FACP (USA), DCN (London)",
+        "hospital": "Teeth Orthodontics",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 9,
+        "name": "Neurology Specialties",
+        "doctor": "Professor Dr. Md. Abdul Hai",
+        "degree": "MBBS, FCPS, FRCP (Edinburg), Fellow (Interventional Neurology)",
+        "hospital": "Ibn Sina Diagnostic Hospital",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 10,
+        "name": "Neurology Specialties",
+        "doctor": "Professor Dr. Mansur Habib",
+        "degree": "MBBS, FCPS (Medicine), MD (Neurology), MRCP, FRCP",
+        "hospital": "LabAid Cardiac Hospital",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 11,
+        "name": "Neurology Specialties",
+        "doctor": "Prof. Dr. Md. Ashraf Ali",
+        "degree": "MBBS, DCPS (Medicine), MD (Neurology), FRCP (Edin)",
+        "hospital": "Sheikh Mujibur Rahman Medical University",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 12,
+        "name": "Neurology Specialties",
+        "doctor": "Prof. Dr. Sirajul Haque",
+        "degree": "MBBS, FCPS (Medicine), FACP (USA), FRCP (Edin)",
+        "hospital": "Labaid Specialized Hospital",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 13,
+        "name": "Dentists",
+        "doctor": "Assoc. Prof. Dr. Aslam Almehdi",
+        "degree": "Ph.D.(Japan), FIAOO (UK), FICD (USA), Postdoc (Australia)",
+        "hospital": "Royal Dental & Maxillofacial Surgery",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 14,
+        "name": "Dentists",
+        "doctor": "Dr. Mohammed Shafi Ullah",
+        "degree": "MBBS, MS, BDS, MCPS, MDRA(USA)",
+        "hospital": "Islami Bank Central Hospital",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 15,
+        "name": "Dentists",
+        "doctor": "DR. MD. HAIDER ALI KHAN",
+        "degree": "BDS (Dhaka), MPH (BSMMU), MPhil (BSMMU), TCTP (Sri Lanka), PGT (Japan)",
+        "hospital": "Dhaka Medical College Hospital",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 16,
+        "name": "Dentists",
+        "doctor": "Dr. Khandaker Abdul Azim",
+        "degree": "BDS, Dip, OMS ( Australia )",
+        "hospital": "Ibn Sina Dental Center",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 17,
+        "name": "Dentists",
+        "doctor": "DR. SK. NAZRUL ISLAM",
+        "degree": "BDS(DU) PGT(BKK) FAES(USA) MCPS(BCPS)",
+        "hospital": "Endo Dental",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
+        ]
+    },
+    {
+        "_id": 18,
+        "name": "Dentists",
+        "doctor": "Dr. Mohammad Saiful Alam Talukder",
+        "degree": "MRSPH (UK) MPH (Course), BDS, PGT (Orthodontics),",
+        "hospital": "Metropolitan Dental",
+        "slots": [
+            "08.00 AM - 08.15 AM",
+            "08.15 AM - 08.30 AM",
+            "08.30 AM - 8.85 AM",
+            "09.15 AM - 9.30 AM",
+            "09.30 AM - 9.45 AM",
+            "09.45 AM - 10.00 AM"
         ]
     }
 ]
