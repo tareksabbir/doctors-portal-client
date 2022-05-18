@@ -1,8 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/icons/icons8-microbeam-radiation-therapy-48.png"
+import auth from '../../firebase.init';
 
 const Navbar = ({ children }) => {
+    const [user] = useAuthState(auth);
+
+    const handleLogout = () => {
+
+        signOut(auth);
+    }
     return (
         <>
             <div className="drawer drawer-end">
@@ -26,7 +35,14 @@ const Navbar = ({ children }) => {
                                 <li><NavLink to="/about" className=' rounded-lg'>About</NavLink></li>
                                 <li><NavLink to="/review" className=' rounded-lg'>Reviews</NavLink></li>
                                 <li><NavLink to="/contact" className=' rounded-lg'>Contact Us</NavLink></li>
-                                <li><NavLink to="/login" className=' rounded-lg'>Login</NavLink></li>
+                                {/* <li><NavLink to="/login" className=' rounded-lg'>Login</NavLink></li>
+                                <li><NavLink to="/register" className=' rounded-lg'>Register</NavLink></li> */}
+                                {
+                                    user ?
+                                        <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
+                                        :
+                                        <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
+                                }
 
                                 <li className="dropdown dropdown-end dropdown-hover">
                                     <label tabIndex="0" className="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
@@ -52,7 +68,13 @@ const Navbar = ({ children }) => {
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/review">Reviews</NavLink></li>
                         <li><NavLink to="/contact">Contact Us</NavLink></li>
-                        <li><NavLink to="/login">Login</NavLink></li>
+
+                        {
+                            user ?
+                                <li><NavLink onClick={handleLogout} to='/login'>Logout</NavLink></li>
+                                :
+                                <li><NavLink to='/login'>Login</NavLink></li>
+                        }
 
                     </ul>
 

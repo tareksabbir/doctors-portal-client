@@ -1,45 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import Swal from 'sweetalert2';
 
 
-const Login = () => {
-
+const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [
-        signInWithEmailAndPassword,
-        user,
-        error
-
-    ] = useSignInWithEmailAndPassword(auth);
-
-
-    useEffect(() => {
-        if (error) {
-            Swal.fire(
-                'Somthing is wrong or Password did not match!!!',
-                'Try Again!',
-                'error'
-            )
-        }
-    }, [error]
-
-    )
-
-
-    const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
-    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-
-
-    const navigate = useNavigate()
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/ '
-
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const navigate = useNavigate();
+    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
 
 
 
@@ -49,57 +22,47 @@ const Login = () => {
     const handlePasswordBlur = event => {
         setPassword(event.target.value);
     }
+    const handleConfirmPassword = event => {
+        setConfirmPassword(event.target.value)
+    }
 
-    const handleUserLogin = event => {
+    const handleCreateUser = event => {
         event.preventDefault();
-        signInWithEmailAndPassword(email, password);
-    }
-
-
-
-    if (user) {
-        navigate(from, { replace: true });
-        Swal.fire(
-            'Welcome Back!',
-            'Login Done Successfully!',
-            'success'
-        )
-    }
-
-    if (googleUser) {
-        navigate(from, { replace: true });
-        Swal.fire(
-            'Welcome Back!',
-            'Login Done Successfully!',
-            'success'
-        )
-    }
-
-    const handleForgotPassword = async () => {
-        if (email) {
-            await sendPasswordResetEmail(email);
+        if (password !== confirmPassword) {
             Swal.fire(
-                'Sent email!',
-                'Check Your Email!',
-                'success'
-            )
-        } else {
-            Swal.fire(
-                'Enter your email address!!',
+                'Your password and confirmPassword did not match',
                 'Try Again!',
                 'info'
             )
+            return;
         }
+        if (password.length < 8) {
+            Swal.fire(
+                'Try Again!',
+                'Must contain at least at least 8 or more characters!',
+                'info'
+            )
+            return
+        }
+        createUserWithEmailAndPassword(email, password);
     }
 
+    if (user) {
+        Swal.fire(
+            'Good job!',
+            'Registration Done Successfully!',
+            'success'
+        )
+        navigate('/');
+    }
 
 
     return (
         <div className="bg-white py-6 sm:py-8 lg:py-12">
             <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-                <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">Login</h2>
+                <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">Register</h2>
 
-                <form onSubmit={handleUserLogin} className="max-w-lg border rounded-lg mx-auto">
+                <form onSubmit={handleCreateUser} className="max-w-lg border rounded-lg mx-auto">
                     <div className="flex flex-col gap-4 p-4 md:p-8">
                         <div>
                             <label for="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
@@ -109,17 +72,18 @@ const Login = () => {
                         <div>
                             <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
                             <input onBlur={handlePasswordBlur} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
-
+                        </div>
+                        <div>
+                            <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Confirm Password</label>
+                            <input onBlur={handleConfirmPassword} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
                         </div>
 
-                        <button className="block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Log in</button>
-
+                        <button className="block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Resister</button>
 
                         <div className="flex justify-center items-center relative">
                             <span className="h-px bg-gray-300 absolute inset-x-0"></span>
-                            <span className="bg-white text-gray-400 text-sm relative px-4">Log in with social</span>
+                            <span className="bg-white text-gray-400 text-sm relative px-4">Register with social</span>
                         </div>
-
 
 
                         <button onClick={() => signInWithGoogle()} className="flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 border border-gray-300 focus-visible:ring ring-gray-300 text-gray-800 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 gap-2 px-8 py-3">
@@ -134,12 +98,8 @@ const Login = () => {
                         </button>
                     </div>
 
-                    <div className='bg-gray-100 flex justify-center items-center'>
-                        <button onClick={handleForgotPassword} className="mx-auto pt-3 text-sm  text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100">Reset Password</button>
-                    </div>
-
                     <div className="flex justify-center items-center bg-gray-100 p-4">
-                        <p className="text-gray-500 text-sm text-center">Don't have an account? <Link to='/register' className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100">Register</Link></p>
+                        <p className="text-gray-500 text-sm text-center">Already have an account? <Link to='/login' className="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100">Login</Link></p>
                     </div>
                 </form>
             </div>
@@ -147,4 +107,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

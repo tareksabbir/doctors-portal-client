@@ -3,10 +3,10 @@ import React from 'react';
 const Service = ({ service, setTreatment }) => {
     const { name, slots, doctor, degree, hospital } = service;
     return (
-        <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-            <div class="card-body">
+        <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+            <div className="card-body">
                 <h2 className='card-title text-center mx-auto mt-6'>{doctor}</h2>
-                <p class="text-center font-semibold">{name}</p>
+                <p className="text-center font-semibold">{name}</p>
                 <p className='text-center'><small>( {degree} )</small></p>
                 <p className='text-center font-bold'><small> Location: {hospital} </small></p>
 
@@ -17,8 +17,8 @@ const Service = ({ service, setTreatment }) => {
                     }
                 </p>
                 <p className='text-center'>{slots.length} {slots.length > 1 ? 'Spaces' : 'Space'} available</p>
-                <div class="card-actions justify-end mt-5 items-center">
-                    <label for="booking-modal" onClick={() => setTreatment(service)} disabled={slots.length === 0} class="btn btn-primary  items-center mx-auto text-white">Book</label>
+                <div className="card-actions justify-end mt-5 items-center">
+                    <label for="booking-modal" onClick={() => setTreatment(service)} disabled={slots.length === 0} className="btn btn-primary  items-center mx-auto text-white">Book</label>
                 </div>
 
             </div>
