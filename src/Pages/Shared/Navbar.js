@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/icons/icons8-microbeam-radiation-therapy-48.png"
 import auth from '../../firebase.init';
 
+
 const Navbar = ({ children }) => {
     const [user] = useAuthState(auth);
 
@@ -35,8 +36,7 @@ const Navbar = ({ children }) => {
                                 <li><NavLink to="/about" className=' rounded-lg'>About</NavLink></li>
                                 <li><NavLink to="/review" className=' rounded-lg'>Reviews</NavLink></li>
                                 <li><NavLink to="/contact" className=' rounded-lg'>Contact Us</NavLink></li>
-                                {/* <li><NavLink to="/login" className=' rounded-lg'>Login</NavLink></li>
-                                <li><NavLink to="/register" className=' rounded-lg'>Register</NavLink></li> */}
+
                                 {
                                     user ?
                                         <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
@@ -80,6 +80,7 @@ const Navbar = ({ children }) => {
 
                 </div>
             </div>
+
 
 
         </>

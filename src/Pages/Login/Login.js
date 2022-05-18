@@ -22,7 +22,7 @@ const Login = () => {
     useEffect(() => {
         if (error) {
             Swal.fire(
-                'Somthing is wrong or Password did not match!!!',
+                'Password Did Not Matched!!!',
                 'Try Again!',
                 'error'
             )

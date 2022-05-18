@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Swal from 'sweetalert2';
+import Loading from '../Shared/Loading';
 
 
 const Register = () => {
@@ -11,8 +12,8 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const navigate = useNavigate();
-    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
 
 
 
@@ -47,13 +48,17 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password);
     }
 
-    if (user) {
+    if (user || googleUser) {
         Swal.fire(
             'Good job!',
             'Registration Done Successfully!',
             'success'
         )
         navigate('/');
+    }
+
+    if (loading || googleLoading) {
+        <Loading></Loading>
     }
 
 
