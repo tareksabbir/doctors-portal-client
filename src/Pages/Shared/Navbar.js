@@ -23,7 +23,7 @@ const Navbar = ({ children }) => {
                         <img src={logo} className="h-10 w-10" alt="" />
                         <div className="flex-1 mx-2 text-xl lg:text-3xl font-bold">Doctors Hub</div>
                         <div className="flex-none lg:hidden">
-                            <label for="my-drawer-3" className="btn btn-square btn-ghost">
+                            <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                             </label>
                         </div>
@@ -60,7 +60,7 @@ const Navbar = ({ children }) => {
                 </div>
 
                 <div className="drawer-side">
-                    <label for="my-drawer-3" className="drawer-overlay"></label>
+                    <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
 
                         <li><NavLink to="/">Home</NavLink></li>

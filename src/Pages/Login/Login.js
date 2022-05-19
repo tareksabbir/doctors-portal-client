@@ -94,12 +94,12 @@ const Login = () => {
                 <form onSubmit={handleUserLogin} className="max-w-lg border rounded-lg mx-auto">
                     <div className="flex flex-col gap-4 p-4 md:p-8">
                         <div>
-                            <label for="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
+                            <label htmlFor="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
                             <input onBlur={handleEmailBlur} name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="email" />
                         </div>
 
                         <div>
-                            <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
+                            <label htmlFor="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
                             <input onBlur={handlePasswordBlur} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
 
                         </div>

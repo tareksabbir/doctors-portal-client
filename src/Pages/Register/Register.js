@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -6,8 +6,6 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Swal from 'sweetalert2';
 import Loading from '../Shared/Loading';
-
-
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -18,8 +16,6 @@ const Register = () => {
     const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [displayName, setDisplayName] = useState('');
-
-
 
     const handleNamelBlur = event => {
         setDisplayName(event.target.value)
@@ -56,18 +52,21 @@ const Register = () => {
         await updateProfile({ displayName })
     }
 
-    if (user || googleUser) {
-        Swal.fire(
-            'Good job!',
-            'Registration Done Successfully!',
-            'success'
-        )
-        navigate('/');
-    }
 
     if (loading || googleLoading || updating) {
         <Loading></Loading>
     }
+
+    useEffect(() => {
+        if (user || googleUser) {
+            Swal.fire(
+                'Good job!',
+                'Registration Done Successfully!',
+                'success'
+            )
+            navigate('/');
+        }
+    }, [user, googleUser, navigate])
 
 
     return (
@@ -78,20 +77,20 @@ const Register = () => {
                 <form onSubmit={handleCreateUser} className="max-w-lg border rounded-lg mx-auto">
                     <div className="flex flex-col gap-4 p-4 md:p-8">
                         <div>
-                            <label for="text" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Name</label>
+                            <label htmlFor="text" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Name</label>
                             <input onBlur={handleNamelBlur} name="name" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="text" />
                         </div>
                         <div>
-                            <label for="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
+                            <label htmlFor="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
                             <input onBlur={handleEmailBlur} name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="email" />
                         </div>
 
                         <div>
-                            <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
+                            <label htmlFor="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Password</label>
                             <input onBlur={handlePasswordBlur} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
                         </div>
                         <div>
-                            <label for="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Confirm Password</label>
+                            <label htmlFor="password" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Confirm Password</label>
                             <input onBlur={handleConfirmPassword} name="password" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="password" />
                         </div>
 
