@@ -2,7 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Contact from "./Pages/Contact/Contact";
+import AllDoctors from "./Pages/Dashboard/AllDoctors";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import History from "./Pages/Dashboard/History";
 import MyAppointments from "./Pages/Dashboard/MyAppointments";
 import MyReview from "./Pages/Dashboard/MyReview";
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
             <Route index element={<MyAppointments></MyAppointments>}></Route>
             <Route path="reviews" element={<MyReview></MyReview>}></Route>
+            <Route path="history" element={<History></History>}></Route>
+            <Route path="doctors" element={<AllDoctors></AllDoctors>}></Route>
           </Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
