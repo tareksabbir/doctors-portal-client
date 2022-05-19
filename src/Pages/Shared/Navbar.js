@@ -38,11 +38,17 @@ const Navbar = ({ children }) => {
                                 <li><NavLink to="/contact" className=' rounded-lg'>Contact Us</NavLink></li>
 
                                 {
+                                    user && <li><NavLink to="/dashboard" className=' rounded-lg'>Dashboard</NavLink></li>
+                                }
+
+                                {
                                     user ?
                                         <li><NavLink onClick={handleLogout} to='/login' className=' rounded-lg'>Logout</NavLink></li>
                                         :
                                         <li><NavLink to='/login' className=' rounded-lg'>Login</NavLink></li>
                                 }
+
+
 
                                 <li className="dropdown dropdown-end dropdown-hover">
                                     <label tabIndex="0" className="btn btn-primary btn-outline m-1 rounded-lg">Book Now</label>
@@ -75,6 +81,7 @@ const Navbar = ({ children }) => {
                                 :
                                 <li><NavLink to='/login'>Login</NavLink></li>
                         }
+
 
                     </ul>
 
