@@ -3,8 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Swal from 'sweetalert2';
 import Loading from '../Shared/Loading';
+
 
 
 const Register = () => {
@@ -14,9 +16,14 @@ const Register = () => {
     const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
+    const [updateProfile, updating] = useUpdateProfile(auth);
+    const [displayName, setDisplayName] = useState('');
 
 
 
+    const handleNamelBlur = event => {
+        setDisplayName(event.target.value)
+    }
     const handleEmailBlur = event => {
         setEmail(event.target.value);
     }
@@ -27,7 +34,7 @@ const Register = () => {
         setConfirmPassword(event.target.value)
     }
 
-    const handleCreateUser = event => {
+    const handleCreateUser = async event => {
         event.preventDefault();
         if (password !== confirmPassword) {
             Swal.fire(
@@ -45,7 +52,8 @@ const Register = () => {
             )
             return
         }
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName })
     }
 
     if (user || googleUser) {
@@ -57,7 +65,7 @@ const Register = () => {
         navigate('/');
     }
 
-    if (loading || googleLoading) {
+    if (loading || googleLoading || updating) {
         <Loading></Loading>
     }
 
@@ -69,6 +77,10 @@ const Register = () => {
 
                 <form onSubmit={handleCreateUser} className="max-w-lg border rounded-lg mx-auto">
                     <div className="flex flex-col gap-4 p-4 md:p-8">
+                        <div>
+                            <label for="text" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Your Name</label>
+                            <input onBlur={handleNamelBlur} name="name" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="text" />
+                        </div>
                         <div>
                             <label for="email" className="inline-block text-gray-800 text-sm sm:text-base mb-2">Email</label>
                             <input onBlur={handleEmailBlur} name="email" className="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" required type="email" />

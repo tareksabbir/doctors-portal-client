@@ -57,7 +57,7 @@ const Login = () => {
 
 
 
-    if (user) {
+    if (user || googleUser) {
         navigate(from, { replace: true });
         Swal.fire(
             'Welcome Back!',
@@ -66,14 +66,6 @@ const Login = () => {
         )
     }
 
-    if (googleUser) {
-        navigate(from, { replace: true });
-        Swal.fire(
-            'Welcome Back!',
-            'Login Done Successfully!',
-            'success'
-        )
-    }
 
     const handleForgotPassword = async () => {
         if (email) {
