@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Feedback = () => {
     return (
@@ -14,7 +15,7 @@ const Feedback = () => {
                             </div>
                             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-                                <a href='/' className="text-indigo-500 leading-relaxed">example@email.com</a>
+                                <Link to="/" className="text-indigo-500 leading-relaxed">example@email.com</Link>
                                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
                                 <p className="leading-relaxed">123-456-7890</p>
                             </div>

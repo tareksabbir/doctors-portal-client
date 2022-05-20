@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import Swal from 'sweetalert2';
+import useToken from '../../Hooks/useToken';
 
 
 const Login = () => {
@@ -17,6 +18,7 @@ const Login = () => {
         error
 
     ] = useSignInWithEmailAndPassword(auth);
+
 
 
     useEffect(() => {
@@ -55,9 +57,11 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
 
+    const [token] = useToken(user || googleUser)
 
 
-    if (user || googleUser) {
+
+    if ((user || googleUser) && token) {
         navigate(from, { replace: true });
         Swal.fire(
             'Welcome Back!',
