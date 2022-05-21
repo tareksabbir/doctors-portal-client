@@ -14,6 +14,7 @@ import MakeAppointment from "./Pages/Home/MakeAppointment";
 import Service from "./Pages/Home/Service";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import RequireAdmin from "./Pages/RequireAuth/RequireAdmin";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import Reviews from "./Pages/Reviews/Reviews";
 
@@ -38,7 +39,7 @@ function App() {
             <Route path="reviews" element={<MyReview></MyReview>}></Route>
             <Route path="history" element={<History></History>}></Route>
             <Route path="doctors" element={<AllDoctors></AllDoctors>}></Route>
-            <Route path="users" element={<AllUsers></AllUsers>}></Route>
+            <Route path="users" element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
 
           </Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
