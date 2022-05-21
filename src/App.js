@@ -3,6 +3,7 @@ import About from "./Pages/About/About";
 import Appointment from "./Pages/Appointment/Appointment";
 import Contact from "./Pages/Contact/Contact";
 import AllDoctors from "./Pages/Dashboard/AllDoctors";
+import AllUsers from "./Pages/Dashboard/AllUsers";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import History from "./Pages/Dashboard/History";
 import MyAppointments from "./Pages/Dashboard/MyAppointments";
@@ -37,6 +38,8 @@ function App() {
             <Route path="reviews" element={<MyReview></MyReview>}></Route>
             <Route path="history" element={<History></History>}></Route>
             <Route path="doctors" element={<AllDoctors></AllDoctors>}></Route>
+            <Route path="users" element={<AllUsers></AllUsers>}></Route>
+
           </Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>

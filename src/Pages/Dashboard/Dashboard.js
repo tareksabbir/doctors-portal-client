@@ -23,6 +23,8 @@ const Dashboard = () => {
                         <li><Link to='/dashboard/reviews' className='text-lg text-slate-100 hover:bg-gray-400 '>My Reviews</Link></li>
                         <li><Link to='/dashboard/history' className='text-lg text-slate-100 hover:bg-gray-400 '>My History</Link></li>
                         <li><Link to='/dashboard/doctors' className='text-lg text-slate-100 hover:bg-gray-400 '>All Doctors</Link></li>
+                        <li><Link to='/dashboard/users' className='text-lg text-slate-100 hover:bg-gray-400 '>All Users</Link></li>
+
 
                     </ul>
 
